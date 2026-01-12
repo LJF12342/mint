@@ -171,12 +171,11 @@ We provide several examples highlighting the use cases of MINT on various superv
 ## 📝 Citing 
 
 ```
-@article{ullanat2025learning,
-  title={Learning the language of protein--protein interactions},
+@article{ullanat2026learning,
+  title={Learning the language of protein-protein interactions},
   author={Ullanat, Varun and Jing, Bowen and Sledzieski, Samuel and Berger, Bonnie},
-  journal={bioRxiv},
-  pages={2025--03},
-  year={2025},
-  publisher={Cold Spring Harbor Laboratory}
+  journal={Nature Communications},
+  year={2026},
+  publisher={Nature Publishing Group UK London}
 }
 ```
