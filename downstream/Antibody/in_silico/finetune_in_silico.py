@@ -283,7 +283,7 @@ def train(model, train_loader, val_loader, cfg, args):
         eps=cfg.adam_eps,
         weight_decay=cfg.weight_decay,
     )
-    loss_fn = torch.nn.Loss()
+    loss_fn = torch.nn.MSELoss()
     model.to(device)
 
     for epoch in range(args.num_epochs):
