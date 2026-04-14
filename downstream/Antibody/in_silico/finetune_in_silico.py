@@ -249,7 +249,7 @@ def evaluate(model, loader, args):
         pearsons.append(pearson)
         spearmans.append(spearman)
 
-    return np.mean(mse), np.mean(pearson), np.mean(spearman)
+    return np.mean(mses), np.mean(pearsons), np.mean(spearmans)
 
 
 @torch.no_grad()
@@ -283,7 +283,7 @@ def train(model, train_loader, val_loader, cfg, args):
         eps=cfg.adam_eps,
         weight_decay=cfg.weight_decay,
     )
-    loss_fn = torch.nn.MSELoss()
+    loss_fn = torch.nn.Loss()
     model.to(device)
 
     for epoch in range(args.num_epochs):
@@ -311,7 +311,7 @@ def train(model, train_loader, val_loader, cfg, args):
 
         if epoch == args.num_epochs - 1:
             print(f"Evaluating at epoch {epoch}")
-            mse, pearson, spearman = evaluate(model, val_loader, args)
+            , pearson, spearman = evaluate(model, val_loader, args)
             print(mse, pearson, spearman)
             wandb.log(
                 {
