@@ -311,7 +311,7 @@ def train(model, train_loader, val_loader, cfg, args):
 
         if epoch == args.num_epochs - 1:
             print(f"Evaluating at epoch {epoch}")
-            , pearson, spearman = evaluate(model, val_loader, args)
+            mse, pearson, spearman = evaluate(model, val_loader, args)
             print(mse, pearson, spearman)
             wandb.log(
                 {
